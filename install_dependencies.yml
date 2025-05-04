@@ -24,7 +24,7 @@
 
     - name: Download JFrog artifact
       get_url:
-        url: "{{ artifact_url }}"
+        url: "https://trial03euu8.jfrog.io/artifactory/libs-release-local/my-app/1.0-SNAPSHOT/my-app-1.0-SNAPSHOT.jar"
         dest: "/opt/myapp/my-app-1.0-SNAPSHOT.jar"
 
     - name: Verify artifact download
