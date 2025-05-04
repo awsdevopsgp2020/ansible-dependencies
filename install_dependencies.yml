@@ -26,6 +26,8 @@
       get_url:
         url: "https://trial03euu8.jfrog.io/artifactory/libs-release-local/my-app/1.0-SNAPSHOT/my-app-1.0-SNAPSHOT.jar"
         dest: "/opt/myapp/my-app-1.0-SNAPSHOT.jar"
+        headers:
+          Authorization: "Bearer cmVmdGtuOjAxOjE3Nzc3MDAyMzY6c0w0cG96bmg3SWFsVlpLbFNvTFY0RnB1bmc1 "
 
     - name: Verify artifact download
       stat:
