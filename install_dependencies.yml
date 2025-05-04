@@ -16,7 +16,4 @@
           - git
         state: present
         
-    - name: Download JFrog artifact
-      get_url:
-       url: "{{ artifact_url }}"
-       dest: "/opt/myapp/"
+    
