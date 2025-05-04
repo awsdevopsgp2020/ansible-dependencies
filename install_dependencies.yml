@@ -15,5 +15,24 @@
           - unzip
           - git
         state: present
-        
-    
+
+    - name: Create directory for artifact download
+      file:
+        path: /opt/myapp/
+        state: directory
+        mode: '0755'
+
+    - name: Download JFrog artifact
+      get_url:
+        url: "{{ artifact_url }}"
+        dest: "/opt/myapp/my-app-1.0-SNAPSHOT.jar"
+
+    - name: Verify artifact download
+      stat:
+        path: "/opt/myapp/my-app-1.0-SNAPSHOT.jar"
+      register: artifact_status
+
+    - name: Display artifact confirmation
+      debug:
+        msg: "Artifact has been successfully downloaded to {{ artifact_status.stat.path }}"
+
